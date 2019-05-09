@@ -11,7 +11,7 @@ import FormControl from '@material-ui/core/FormControl';
 //import FormControlLabel from '@material-ui/core/FormControlLabel';
 //import NumPad from 'react-numpad-material';
 import FormDialog from '../Modl';
-import history from '/Users/Nextia/CourseReact/paselista/src/history.js';
+import history from '../../history';
 
 const styles = {
   card: {
@@ -72,8 +72,6 @@ class SimpleCard extends React.Component {
 
   render() {
   const { classes } = this.props;
-    const { grupo, password } = this.state;
-
   return (
     <form variant="outlined" onSubmit={this.handleSubmit} >
     
