@@ -1,15 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Fab from '@material-ui/core/Fab';
 import MenuIcon from '@material-ui/icons/Menu';
 import AddIcon from '@material-ui/icons/Add';
 import SearchIcon from '@material-ui/icons/Search';
-import MoreIcon from '@material-ui/icons/MoreVert';
+import original from './original.png';
+import insta from './insta.png';
+import youtube from './youtube.png';
 
 const styles = theme => ({
   text: {
@@ -45,33 +46,35 @@ const styles = theme => ({
   },
 });
 
-
-
 function BottomAppBar(props) {
   const { classes } = props;
-  return (
-    <React.Fragment>
-      <CssBaseline />
-
+  return (  
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <IconButton color="inherit" aria-label="Open drawer">
+          <IconButton color="primary" aria-label="Open drawer">
             <MenuIcon />
           </IconButton>
           <Fab color="secondary" aria-label="Add" className={classes.fabButton}>
             <AddIcon />
           </Fab>
           <div>
-            <IconButton color="inherit">
+            <IconButton color="primary">
               <SearchIcon />
             </IconButton>
-            <IconButton color="inherit">
-              <MoreIcon />
-            </IconButton>
+          </div>
+          <div>
+          <IconButton>
+            <img src={original} style={{width: 30, height: 30}} alt="fb logo" />
+          </IconButton>
+          <IconButton>
+            <img src={insta} style={{width: 30, height: 30}} alt="insta logo" />
+          </IconButton>
+          <IconButton>
+            <img src={youtube} style={{width: 40, height: 30}} alt="yt logo" />
+          </IconButton>
           </div>
         </Toolbar>
       </AppBar>
-    </React.Fragment>
   );
 }
 

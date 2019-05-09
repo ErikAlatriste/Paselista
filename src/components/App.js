@@ -8,7 +8,6 @@ import { green, red } from '@material-ui/core/colors';
 import history from '../history';
 import BottomAppBar from './BottomAppBar';
 
-
 const theme = createMuiTheme({
     palette: {
       primary: green,
@@ -27,7 +26,7 @@ class App extends Component {
                 <MuiThemeProvider theme={theme}>
                 <div>
                     <Header />
-                    <Route path="/" exact component={Login} />
+                    <Route path="/login" exact component={Login} />
                     <Route path="/desarrollo-web-avanzado" exact component={DessarrolloWebAvanzado} />
                     <BottomAppBar />
                 </div>

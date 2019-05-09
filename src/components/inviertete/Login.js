@@ -7,9 +7,9 @@ class Login extends React.Component{
         return (
             <div>
             <div className="inviertete">
-            <img src={inviertete} style={{ width: 610, height: 100, margin: '50px 500px 50px 610px'}} />
+            <img src={inviertete} style={{ width: 610, height: 100, margin: '50px 500px 50px 610px'}} alt="Inviertete" />
             </div>
-            <SimpleCard>
+            <SimpleCard {...this.props}>
 
             </SimpleCard>
             </div>

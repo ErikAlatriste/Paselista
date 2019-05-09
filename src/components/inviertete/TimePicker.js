@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, TimePicker, DatePicker } from 'material-ui-pickers';
+import { MuiPickersUtilsProvider, TimePicker} from 'material-ui-pickers';
 
 const styles = {
   grid: {
@@ -15,18 +15,24 @@ const styles = {
 class TimePickers extends React.Component {
   state = {
     // The first commit of Material-UI
-    selectedDate: new Date('2019-04-26T11:28:54'),
+    selectedDate: new Date(),
   };
 
   handleDateChange = date => {
     this.setState({ selectedDate: date });
   };
 
+  handleSubmit(event){
+    console.log(this.state.selectedDate)
+    event.preventDefault();
+  }
+
   render() {
     const { classes } = this.props;
     const { selectedDate } = this.state;
 
     return (
+      <form onSubmit={this.handleSubmit}>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <Grid container className={classes.grid} justify="space-around">
 
@@ -38,6 +44,7 @@ class TimePickers extends React.Component {
           />
         </Grid>
       </MuiPickersUtilsProvider>
+      </form>
     );
   }
 }
